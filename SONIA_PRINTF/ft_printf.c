@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 16:31:33 by ehaggon           #+#    #+#             */
+/*   Updated: 2019/10/21 16:31:35 by ehaggon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
+
 int				ft_printf(char *str, ...)
 {
 	va_list		ap;
@@ -8,7 +21,9 @@ int				ft_printf(char *str, ...)
 
     va_start(ap, str);
     ft_printf_init(&buf, &param);
-    res = ft_get_res();
+    res = buf.size;
+    write(1, buf.buf, buf.top + 1);
+    ft_free_buf(&buf);
     va_end(ap);
     return(res);
 }

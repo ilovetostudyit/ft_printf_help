@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef struct		s_buf
 {
@@ -30,3 +31,4 @@ char			*ft_strnew(size_t size);
 void            *ft_memset(void *b, int c, size_t len);
 void            ft_printf_init(t_buf *buf, t_param *param);
 void            ft_param_init(t_param *param);
+void			ft_free_buf(t_buf *buf);
