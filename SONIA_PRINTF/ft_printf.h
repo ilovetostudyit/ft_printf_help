@@ -32,3 +32,4 @@ void            *ft_memset(void *b, int c, size_t len);
 void            ft_printf_init(t_buf *buf, t_param *param);
 void            ft_param_init(t_param *param);
 void			ft_free_buf(t_buf *buf);
+void            ft_print_res(t_buf *buf);
