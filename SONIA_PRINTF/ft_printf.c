@@ -6,7 +6,7 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 16:31:33 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/10/22 14:22:11 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/10/22 14:41:27 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ size_t          ft_get_res(t_buf *buf, t_param *param, char **str, va_list *ap)
 		else if (**str == '{')
 			ft_col(str, buf);
 		else
-			ft_buf_add_c(&buf, *str);
-		*str ? str++ : NULL;
+			ft_buf_add_c(buf, str);
+		**str ? (*str)++ : NULL;
 		buf->err == 1 ? free(buf->buf) : 0;
 		if (buf->err == 1)
 			return (-1);
@@ -63,7 +63,7 @@ void            ft_buf_add_c(t_buf *buf, char **str)
     printf("%s\n", "тут стоит заглушка, которая обрабатывает процент");
 }
 
-void            ft_col(t_buf *buf,char **str)
+void            ft_col(char **str, t_buf *buf)
 {
     printf("%s\n", "тут стоит заглушка, которая называется ft_col");
 }
