@@ -9,5 +9,5 @@ void    ft_colour_main(char **str, t_buf *buf)
 	printf("%s\n", "Обрабатываем фигурные скобки");
 	*str = ft_detect_col(*str, buf);
 	//что это?
-	**str != '}' ? ft_buf_add_c(buf, str) : NULL;
+	**str != '}' ? ft_print_else(buf, **str) : NULL;
 }
