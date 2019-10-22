@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef struct		s_buf
 {
@@ -24,9 +25,35 @@ typedef struct		s_param
 
 # define BUF_SIZE 1000
 int				ft_printf(char *str, ...);
-int             ft_get_res();
+size_t          ft_get_res(t_buf *buf, t_param *param, char **str, va_list *ap);
 void            ft_buf_init(t_buf *buf);
 char			*ft_strnew(size_t size);
 void            *ft_memset(void *b, int c, size_t len);
 void            ft_printf_init(t_buf *buf, t_param *param);
 void            ft_param_init(t_param *param);
+void			ft_free_buf(t_buf *buf);
+void            ft_print_res(t_buf *buf);
+void            ft_percent_main(t_buf *buf, t_param *param, char **str, va_list *ap);
+void            ft_colour_main(char **str, t_buf *buf);
+void            ft_print_else(t_buf *buf, char str);
+int				ft_add_new_param(t_param *param, char **str, va_list *ap);
+void			ft_print_str(int top, char *str);
+void			ft_null_str(char *str);
+
+void			ft_type_c(t_param param, char c, t_buf *buf);
+void			ft_type_c_up(t_param param, wchar_t c, t_buf *buf);
+void			ft_type_d(t_param param, va_list *ap, t_buf *buf);
+void			ft_type_d_up(t_param param, va_list ap, t_buf *buf);
+void			ft_type_f(t_param param, va_list ap, t_buf *buf);
+void			ft_type_f_up(t_param param, va_list ap, t_buf *buf);
+void			ft_type_o(t_param param, va_list ap, t_buf *buf);
+void			ft_type_o_up(t_param param, va_list ap, t_buf *buf);
+void			ft_type_p(t_param param, void *ptr, t_buf *buf);
+void			ft_type_percent(t_param param, t_buf *buf);
+void			ft_type_s_up(t_param param, wchar_t *ap, t_buf *buf);
+void			ft_type_s(t_param param, char *ap, t_buf *buf);
+void			ft_type_u(t_param param, va_list *ap, t_buf *buf);
+void			ft_type_u_up(t_param param, va_list ap, t_buf *buf);
+void			ft_type_x(t_param param, va_list *ap, t_buf *buf);
+void			ft_type_x_up(t_param param, va_list ap, t_buf *buf);
+
