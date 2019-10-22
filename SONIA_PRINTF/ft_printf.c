@@ -34,9 +34,9 @@ size_t          ft_get_res(t_buf *buf, t_param *param, char **str, va_list *ap)
     while (**str)
 	{
 		if (**str == '%')
-			ft_prcnt(buf, param, str, ap);
+			ft_percent_main(buf, param, str, ap);
 		else if (**str == '{')
-			ft_col(str, buf);
+			ft_colour_main(str, buf);
 		else
 			ft_buf_add_c(buf, str);
 		**str ? (*str)++ : NULL;
@@ -53,17 +53,7 @@ void            ft_print_res(t_buf *buf)
     write(1, buf->buf, buf->top + 1);
 }
 
-void            ft_prcnt(t_buf *buf, t_param *param, char **str, va_list *ap)
-{
-    printf("%s\n", "тут стоит заглушка, которая обрабатывает процент");
-}
-
 void            ft_buf_add_c(t_buf *buf, char **str)
 {
     printf("%s\n", "тут стоит заглушка, которая обрабатывает процент");
-}
-
-void            ft_col(char **str, t_buf *buf)
-{
-    printf("%s\n", "тут стоит заглушка, которая называется ft_col");
 }
