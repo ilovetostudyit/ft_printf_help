@@ -35,6 +35,7 @@ void			ft_free_buf(t_buf *buf);
 void            ft_print_res(t_buf *buf);
 void            ft_percent_main(t_buf *buf, t_param *param, char **str, va_list *ap);
 void            ft_colour_main(char **str, t_buf *buf);
-void            ft_buf_add_c(t_buf *buf, char **str);
+void            ft_buf_add_c(t_buf *buf, char str);
 int				ft_add_new_param(t_param *param, char **str, va_list *ap);
+void			ft_print_and_free(int top, char *str);
 

@@ -6,7 +6,7 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 16:31:33 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/10/22 18:23:51 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/10/22 19:18:41 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ size_t          ft_get_res(t_buf *buf, t_param *param, char **str, va_list *ap)
 	{
 		if (**str == '%')
 			ft_percent_main(buf, param, str, ap);
-		else if (**str == '{')
-			ft_colour_main(str, buf);
+		/*else if (**str == '{')
+			ft_colour_main(str, buf);*/
 		else
-			ft_buf_add_c(buf, str);
+			ft_buf_add_c(buf, **str);
 		**str ? (*str)++ : NULL;
 		if (buf->err == 1)
 			return (-1);
@@ -52,7 +52,24 @@ void            ft_print_res(t_buf *buf)
     write(1, buf->buf, buf->top + 1);
 }
 
-void            ft_buf_add_c(t_buf *buf, char **str)
+void            ft_buf_add_c(t_buf *buf, char str)
 {
     printf("%s\n", "тут стоит заглушка, которая не процент и не скобочка");
+	if (buf->top + 1 >= BUF_SIZE)
+	{
+		ft_print_and_free(buf->top, buf->buf);
+		buf->top = -1;
+	}
+	buf->buf[++buf->top] = str;
+	buf->size++;
+}
+
+void			ft_print_and_free(int top, char *str)
+{
+	write(1, str, top + 1);
+	while (*str)
+	{
+		*str = 0;
+		str++;
+	}
 }
