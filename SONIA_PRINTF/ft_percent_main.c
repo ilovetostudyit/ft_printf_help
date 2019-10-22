@@ -66,5 +66,5 @@ void ft_percent_main(t_buf *buf, t_param *param, char **str, va_list *ap)
 	*str = *str + 1;
 	ft_add_new_param(param, str, ap);
 	ft_type(ap, str, param, buf);
-    ft_printf("Обрабатываем проценты");
+    printf("%s\n", "Обрабатываем проценты");
 }
