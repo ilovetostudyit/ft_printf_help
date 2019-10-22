@@ -6,7 +6,7 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 16:31:33 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/10/22 14:41:27 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/10/22 16:30:35 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int				ft_printf(char *str, ...)
 
     va_start(ap, str);
     ft_printf_init(&buf, &param);
-    res = ft_get_res(&buf, &param, &str, &ap);
-    ft_print_res(&buf);
+    if ((res = ft_get_res(&buf, &param, &str, &ap)) != -1)
+        ft_print_res(&buf);
     ft_free_buf(&buf);
     va_end(ap);
     return((int)res);
@@ -40,7 +40,6 @@ size_t          ft_get_res(t_buf *buf, t_param *param, char **str, va_list *ap)
 		else
 			ft_buf_add_c(buf, str);
 		**str ? (*str)++ : NULL;
-		buf->err == 1 ? free(buf->buf) : 0;
 		if (buf->err == 1)
 			return (-1);
 	}
