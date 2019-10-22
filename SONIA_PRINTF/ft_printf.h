@@ -40,3 +40,20 @@ int				ft_add_new_param(t_param *param, char **str, va_list *ap);
 void			ft_print_str(int top, char *str);
 void			ft_null_str(char *str);
 
+void			ft_type_c(t_param param, char c, t_buf *buf);
+void			ft_type_c_up(t_param param, wchar_t c, t_buf *buf);
+void			ft_type_d(t_param param, va_list *ap, t_buf *buf);
+void			ft_type_d_up(t_param param, va_list ap, t_buf *buf);
+void			ft_type_f(t_param param, va_list ap, t_buf *buf);
+void			ft_type_f_up(t_param param, va_list ap, t_buf *buf);
+void			ft_type_o(t_param param, va_list ap, t_buf *buf);
+void			ft_type_o_up(t_param param, va_list ap, t_buf *buf);
+void			ft_type_p(t_param param, void *ptr, t_buf *buf);
+void			ft_type_percent(t_param param, t_buf *buf);
+void			ft_type_s_up(t_param param, wchar_t *ap, t_buf *buf);
+void			ft_type_s(t_param param, char *ap, t_buf *buf);
+void			ft_type_u(t_param param, va_list *ap, t_buf *buf);
+void			ft_type_u_up(t_param param, va_list ap, t_buf *buf);
+void			ft_type_x(t_param param, va_list *ap, t_buf *buf);
+void			ft_type_x_up(t_param param, va_list ap, t_buf *buf);
+
