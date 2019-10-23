@@ -2,7 +2,7 @@
 
 void 	ft_get_length(t_param *param, char **str)
 {
-	printf("	Ищу длину\n");
+	//printf("	Ищу длину\n");
     if (**str == 'L' || **str == 'l' || **str == 'h' ||
 		    **str == 'j' || **str == 'z')
 	{

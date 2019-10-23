@@ -3,7 +3,7 @@
 //i can make it better
 void	ft_get_flags(t_param *param, char **str)
 {
-	printf("	Ищу флаг\n");
+	//printf("	Ищу флаг\n");
     while (**str && (**str == '0' || **str == '+' || **str == '-' ||
 			**str == ' ' || **str == '#'))
 	{

@@ -2,7 +2,7 @@
 
 int				ft_param_fill(t_param *param, char **str, va_list *ap)
 {
-	printf("	Добавляем новый параметр\n");
+	//printf("	Добавляем новый параметр\n");
 	ft_get_flags(param, str);
 	ft_get_width_main(param, str, ap);
 	if (ft_get_prec_main(param, str, ap))
