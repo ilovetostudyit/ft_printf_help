@@ -38,7 +38,7 @@ void            ft_colour_main(char **str, t_buf *buf);
 void            ft_print_else(t_buf *buf, char str);
 int				ft_param_fill(t_param *param, char **str, va_list *ap);
 void			ft_print_str(int top, char *str);
-void			ft_null_str(char *str);
+void			ft_null_str_buf(char *str);
 
 void			ft_type_c(t_param param, char c, t_buf *buf);
 void			ft_type_c_up(t_param param, wchar_t c, t_buf *buf);
@@ -60,4 +60,7 @@ void			ft_type_x_up(t_param param, va_list ap, t_buf *buf);
 int				ft_get_prec(t_param *param, char **str,va_list *ap);
 int				ft_get_length(t_param *param, char **str);
 int 			ft_get_width(t_param *param, char **str,va_list *ap);
-int 			ft_flags(t_param *param, char **str);
+void			ft_get_width_main(t_param *param, char **str, va_list *ap);
+int 			ft_get_flags(t_param *param, char **str);
+int				ft_get_prec_main(t_param *param, char **str,va_list *ap);
+void			ft_get_other_flags(t_param *param, char **str);
