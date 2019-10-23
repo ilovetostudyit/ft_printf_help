@@ -1,7 +1,18 @@
 #include "../ft_printf.h"
 
-int 	ft_get_length(t_param *param, char **str)
+void 	ft_get_length(t_param *param, char **str)
 {
 	printf("	Ищу длину\n");
-	return(0);
+    if (**str == 'L' || **str == 'l' || **str == 'h' ||
+		    **str == 'j' || **str == 'z')
+	{
+		param->length += **str;
+		*str += 1;
+	}
+	if ((param->length == 'l' && **str == 'l') ||
+		(param->length == 'h' && **str == 'h'))
+	{
+		param->length += **str;
+		*str += 1;
+	}
 }
