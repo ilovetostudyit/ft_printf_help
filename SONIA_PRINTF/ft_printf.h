@@ -38,7 +38,6 @@ void            ft_percent_main(t_buf *buf, t_param *param, char **str, va_list 
 void            ft_colour_main(char **str, t_buf *buf);
 void            ft_print_else(t_buf *buf, char str);
 int				ft_param_fill(t_param *param, char **str, va_list *ap);
-void			ft_print_str(int top, char *str);
 void			ft_null_str_buf(char *str);
 
 void			ft_type_c(t_param param, char c, t_buf *buf);
