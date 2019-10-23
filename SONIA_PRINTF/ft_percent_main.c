@@ -73,7 +73,7 @@ void ft_percent_main(t_buf *buf, t_param *param, char **str, va_list *ap)
 	if (*str && *str + 1)
 	{
 		*str = *str + 1;
-		ft_param_fill(param, str, ap); //собрать
-		ft_type_selector(ap, str, param, buf); // cобрать
+		ft_param_fill(param, str, ap);
+		ft_type_selector(ap, str, param, buf);
 	}
 }
