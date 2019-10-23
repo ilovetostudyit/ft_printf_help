@@ -2,7 +2,7 @@
 
 static void		ft_type_small_alpha(va_list *ap, char **str, t_param *param, t_buf *buf)
 {
-	printf("%s\n", "		Обрабатываем, если маленькая буква");
+	//printf("%s\n", "		Обрабатываем, если маленькая буква");
 	if (**str == 'c' && param->length == 'l')
 		ft_type_c_up(*param, (wchar_t)va_arg(*ap, wchar_t), buf);
 	else if (**str == 's' && param->length == 'l')
@@ -29,7 +29,7 @@ static void		ft_type_small_alpha(va_list *ap, char **str, t_param *param, t_buf 
 }
 static void		ft_type_big_alpha(va_list *ap, char **str, t_param *param, t_buf *buf)
 {
-	printf("%s\n", "		Обрабатываем, если большая буква");
+	//printf("%s\n", "		Обрабатываем, если большая буква");
 	if (**str == 'C')
 		ft_type_c_up(*param, (wchar_t)va_arg(*ap, wchar_t), buf);
 	else if (**str == 'S')
@@ -50,7 +50,7 @@ static void		ft_type_big_alpha(va_list *ap, char **str, t_param *param, t_buf *b
 }
 static void		ft_type_symbol(va_list *ap, char **str, t_param *param, t_buf *buf)
 {
-	printf("%s\n", "		Обрабатываем, если символ");
+	//printf("%s\n", "		Обрабатываем, если символ");
 	if (**str == '%')
 		ft_type_percent(*param, buf);
 	else if (**str)
@@ -58,7 +58,7 @@ static void		ft_type_symbol(va_list *ap, char **str, t_param *param, t_buf *buf)
 }
 static void		ft_type_selector(va_list *ap, char **str, t_param *param, t_buf *buf)
 {
-	printf("%s\n", "	Выбираем тип (большая буква, маленькая, символ)");
+	//printf("%s\n", "	Выбираем тип (большая буква, маленькая, символ)");
 	if (**str >= 65 && **str <= 90)
 		ft_type_big_alpha(ap, str, param, buf);
 	if (**str >= 97 && **str <= 122)
@@ -69,7 +69,7 @@ static void		ft_type_selector(va_list *ap, char **str, t_param *param, t_buf *bu
 
 void ft_percent_main(t_buf *buf, t_param *param, char **str, va_list *ap)
 {
-	printf("%s\n", "Обрабатываем проценты");
+	//printf("%s\n", "Обрабатываем проценты");
 	if (*str && *str + 1)
 	{
 		*str = *str + 1;
