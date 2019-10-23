@@ -33,6 +33,7 @@ void            ft_printf_init(t_buf *buf, t_param *param);
 void            ft_param_init(t_param *param);
 void			ft_free_buf(t_buf *buf);
 void            ft_print_res(t_buf *buf);
+void			ft_buf_add_s(t_buf *new, char *str, int flag); //я тут ненадолго
 void            ft_percent_main(t_buf *buf, t_param *param, char **str, va_list *ap);
 void            ft_colour_main(char **str, t_buf *buf);
 void            ft_print_else(t_buf *buf, char str);

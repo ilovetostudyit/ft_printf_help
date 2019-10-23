@@ -1,5 +1,10 @@
 #include "ft_printf.h"
 
+void				ft_buf_add_s(t_buf *new, char *str, int flag)
+{
+	printf("%s\n","тут я печатаю результат, но как-то иначе 0_о");
+}
+
 void            ft_print_res(t_buf *buf)
 {
     printf("%s\n","тут я печатаю результат");
