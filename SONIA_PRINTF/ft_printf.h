@@ -63,3 +63,4 @@ int 			ft_get_width(t_param *param, char **str,va_list *ap);
 void			ft_get_width_main(t_param *param, char **str, va_list *ap);
 int 			ft_get_flags(t_param *param, char **str);
 int				ft_get_prec_main(t_param *param, char **str,va_list *ap);
+void			ft_get_other_flags(t_param *param, char **str);
