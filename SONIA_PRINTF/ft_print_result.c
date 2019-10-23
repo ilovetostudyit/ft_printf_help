@@ -17,7 +17,7 @@ void            ft_print_else(t_buf *buf, char str)
 	if (buf->top + 1 >= BUF_SIZE)
 	{
 		ft_print_str(buf->top, buf->buf);
-        ft_null_str(buf->buf);
+        ft_null_str_buf(buf->buf);
 		buf->top = -1;
 	}
 	buf->buf[++buf->top] = str;

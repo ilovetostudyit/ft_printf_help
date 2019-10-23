@@ -6,7 +6,7 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:37:01 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/10/22 19:26:33 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/10/23 12:31:55 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void ft_free_buf(t_buf *buf)
     printf("%s\n", "освобождаем буфер");
 }
 
-void ft_null_str(char *str)
+void ft_null_str_buf(char *str)
 {
 	while (*str)
 	{
