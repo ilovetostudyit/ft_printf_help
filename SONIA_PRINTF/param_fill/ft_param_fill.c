@@ -8,8 +8,6 @@ int				ft_param_fill(t_param *param, char **str, va_list *ap)
 	if (ft_get_prec_main(param, str, ap))
 		return(-1);
 	ft_get_length(param, str);
-	if (**str && (**str == '0' || **str == '+' || **str == '-' ||
-			**str == ' ' || **str == '#'))
-		ft_get_flags(param, str);
+	ft_get_other_flags(param, str);
 	return (1);
 }

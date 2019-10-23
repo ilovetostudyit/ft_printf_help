@@ -25,7 +25,7 @@ void ft_param_init(t_param *param)
 	param->minus = 0;
 	param->plus = 0;
 	param->zero = 0;
-	param->hasht = 0;
+	param->hash = 0;
 	param->space = 0;
 	param->length = 0;
     printf("%s\n", "- инциализировал параметры");

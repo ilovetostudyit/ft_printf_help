@@ -17,7 +17,7 @@ typedef struct		s_param
 	char			minus;
 	char			plus;
 	char			zero;
-	char			hasht;
+	char			hash;
 	char			space;
 	int				width;
 	int				precision;
@@ -58,9 +58,10 @@ void			ft_type_x(t_param param, va_list *ap, t_buf *buf);
 void			ft_type_x_up(t_param param, va_list ap, t_buf *buf);
 
 int				ft_get_prec(t_param *param, char **str,va_list *ap);
-int				ft_get_length(t_param *param, char **str);
+void			ft_get_length(t_param *param, char **str);
 int 			ft_get_width(t_param *param, char **str,va_list *ap);
 void			ft_get_width_main(t_param *param, char **str, va_list *ap);
-int 			ft_get_flags(t_param *param, char **str);
+void 			ft_get_flags(t_param *param, char **str);
 int				ft_get_prec_main(t_param *param, char **str,va_list *ap);
 void			ft_get_other_flags(t_param *param, char **str);
+int				ft_atoi(const char *str);
