@@ -20,3 +20,9 @@ void ft_plus_check(char *str, t_param *param, t_buf *buf)
     if (param->plus == 1 && *str != '-')
 		ft_print_else(buf, '+');
 }
+
+void ft_zero_check(char *str, t_param *param, t_buf *buf)
+{
+	if (!(*str == '0' && param->precision == 0))
+		ft_buf_add_s(buf, str, 0);
+}
