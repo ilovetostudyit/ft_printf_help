@@ -79,3 +79,6 @@ char			*ft_memnew(size_t i, int lett);
 int				ft_putchar(unsigned long long c, char *str);
 void			ft_zero_check(char *str, t_param *param, t_buf *buf);
 char			*ft_itoa_base_ll(uintmax_t n, int base);
+void			ft_type_p_zero(t_param list, int len, t_buf *buf);
+void			ft_type_p_minus(t_param list, char *str, int len, t_buf *buf);
+void			ft_type_p_else(t_param list, char *str, int len, t_buf *buf);
