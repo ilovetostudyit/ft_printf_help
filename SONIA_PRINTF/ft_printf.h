@@ -78,3 +78,4 @@ void			ft_plus_check(char *str, t_param *param, t_buf *buf);
 char			*ft_memnew(size_t i, int lett);
 int				ft_putchar(unsigned long long c, char *str);
 void			ft_zero_check(char *str, t_param *param, t_buf *buf);
+char			*ft_itoa_base_ll(uintmax_t n, int base);

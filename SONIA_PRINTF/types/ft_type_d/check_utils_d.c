@@ -1,4 +1,4 @@
-#include "../ft_printf.h"
+#include "../../ft_printf.h"
 
 void ft_tire_check(char *str, t_buf *buf)
 {

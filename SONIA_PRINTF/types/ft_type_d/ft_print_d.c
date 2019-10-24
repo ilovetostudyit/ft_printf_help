@@ -1,4 +1,4 @@
-#include "../ft_printf.h"
+#include "../../ft_printf.h"
 
 static void	ft_type_d_minus_pos(char *str, t_param param, int tmp, t_buf *buf)
 {
