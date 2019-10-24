@@ -3,26 +3,28 @@
 static void		ft_type_small_alpha(va_list *ap, char **str, t_param *param, t_buf *buf)
 {
 	//printf("%s\n", "		Обрабатываем, если маленькая буква");
-	if (**str == 'c' && param->length == 'l')
-		ft_type_c_up(*param, (wchar_t)va_arg(*ap, wchar_t), buf);
-	else if (**str == 's' && param->length == 'l')
-		ft_type_s_up(*param, (wchar_t *)va_arg(*ap, wchar_t *), buf);
-	if (**str == 'u')
+	if (**str == 'c')
+		if  (param->length == 'l')
+			ft_type_c_up(*param, (wchar_t)va_arg(*ap, wchar_t), buf);
+		else
+			ft_type_c(*param, (char)va_arg(*ap, int), buf);
+	else if (**str == 's')
+		if (param->length == 'l')
+			ft_type_s_up(*param, (wchar_t *)va_arg(*ap, wchar_t *), buf);
+		else
+			ft_type_s(*param, (char *)va_arg(*ap, char *), buf);
+	else if (**str == 'd' || **str == 'i')
+		ft_type_d(*param, ap, buf);
+	else if (**str == 'u')
 		ft_type_u(*param, ap, buf);
 	else if (**str == 'x')
 		ft_type_x(*param, ap, buf);
-	else if (**str == 'c')
-		ft_type_c(*param, (char)va_arg(*ap, int), buf);
-	else if (**str == 's')
-		ft_type_s(*param, (char *)va_arg(*ap, char *), buf);
-	else if (**str == 'o')
-		ft_type_o(*param, *ap, buf);
 	else if (**str == 'f')
 		ft_type_f(*param, *ap, buf);
+	else if (**str == 'o')
+		ft_type_o(*param, *ap, buf);
 	else if (**str == 'p')
 		ft_type_p(*param, va_arg(*ap, void *), buf);
-	else if (**str == 'd' || **str == 'i')
-		ft_type_d(*param, ap, buf);
 	else if (**str)
 		ft_type_c(*param, **str, buf);
 	
