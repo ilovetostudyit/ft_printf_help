@@ -29,6 +29,7 @@ size_t          ft_get_res(t_buf *buf, t_param *param, char **str, va_list *ap);
 void            ft_buf_init(t_buf *buf);
 char			*ft_strnew(size_t size);
 void            *ft_memset(void *b, int c, size_t len);
+void			*ft_memset_char(char *str, t_param param, char c);
 void            ft_printf_init(t_buf *buf, t_param *param);
 void            ft_param_init(t_param *param);
 void			ft_free_buf(t_buf *buf);
