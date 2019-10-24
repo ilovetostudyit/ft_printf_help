@@ -3,7 +3,33 @@
 void				ft_buf_add_ns(t_buf *buf, char *str, size_t n, int flag)
 {
 	//printf("%s\n","тут я печатаю результат, но как-то иначе 0_о (NS)");
+	int		putch;
+	char	*beg;
+
+	if (buf->top + 1 + n >= BUF_SIZE)
+	{
+		buf->size += buf->top + 1;
+		ft_print_res(buf);
+		ft_null_str_buf(buf->buf);
+		buf->top = -1;
+	}
+	flag == 0 ? beg = str : 0;
+	if (n >= BUF_SIZE)
+	{
+		buf->size += n;
+		write(1, str, n);
+	}
+	else
+		while (*str && n--)
+		{
+			putch = ft_putchar(*str, buf->buf + 1 + buf->top);
+			buf->size += putch;
+			buf->top += putch;
+			str++;
+		}
+	flag == 0 ? free(beg) : 0;
 }
+
 void				ft_buf_add_nc(t_buf *buf, wchar_t c)
 {
 	//printf("%s\n","тут я печатаю результат, но как-то иначе 0_о (NC)");
@@ -22,7 +48,7 @@ void				ft_buf_add_s(t_buf *buf, char *str, int flag)
 	if (buf->top + 1 + len >= BUF_SIZE)
 	{
 		ft_print_res(buf);
-		ft_free_buf(buf);
+		ft_null_str_buf(buf->buf);
 	}
 	buf->top + 1 + len >= BUF_SIZE ? buf->top = -1 : 0;
 	if (len >= BUF_SIZE)
