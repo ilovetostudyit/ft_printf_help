@@ -85,3 +85,8 @@ void			ft_type_p_minus(t_param param, char *str, int len, t_buf *buf);
 void			ft_type_p_else(t_param param, char *str, int len, t_buf *buf);
 void    		fill_with_zeros(t_param *param, t_buf *buf, int len);
 void			p_precision_check(t_param *param, t_buf *buf, int len);
+void			ft_type_s_prec_pos(t_param param, char *ap, int tmp, t_buf *buf);
+void			ft_type_s_minus(t_param param, char *ap, int tmp, t_buf *buf);
+void			ft_type_s_prec_neg(t_param param, char *ap, int tmp, t_buf *buf);
+void    		s_ap_check(t_buf *buf, char *ap);
+void   			s_width_check(t_param param, char *ap, int tmp, t_buf *buf);
