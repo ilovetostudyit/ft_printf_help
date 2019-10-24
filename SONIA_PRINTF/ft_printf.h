@@ -83,3 +83,4 @@ void			ft_type_p_zero(t_param param, int len, t_buf *buf);
 void			ft_type_p_minus(t_param param, char *str, int len, t_buf *buf);
 void			ft_type_p_else(t_param param, char *str, int len, t_buf *buf);
 void    		fill_with_zeros(t_param *param, t_buf *buf, int len);
+void			p_precision_check(t_param *param, t_buf *buf, int len);
