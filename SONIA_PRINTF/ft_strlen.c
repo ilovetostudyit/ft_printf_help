@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_buf.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 14:37:01 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/10/24 14:27:02 by ehaggon          ###   ########.fr       */
+/*   Created: 2019/09/23 14:30:14 by bprincip          #+#    #+#             */
+/*   Updated: 2019/10/24 13:05:36 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-//  ft_free_buf.c
-//  
-//
-//  Created by Hagraven Cummerata on 19/10/2019.
-//
-
 #include "ft_printf.h"
 
-void ft_free_buf(t_buf *buf)
+size_t	ft_strlen(const char *s)
 {
-	free(buf->buf);
-	buf = NULL;
-    ////printf("%s\n", "освобождаем буфер");
-}
+	char *tmp;
 
-void ft_null_str_buf(char *str)
-{
-	while (*str)
+	if (s)
 	{
-		*str = 0;
-		str++;
+		tmp = (char*)s;
+		if (s)
+			while (*tmp)
+				tmp++;
+		return (tmp - s);
 	}
+	return (0);
 }

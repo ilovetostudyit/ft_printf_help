@@ -10,7 +10,7 @@ int     ft_get_prec_main(t_param *param, char **str,va_list *ap)
 
 int 	ft_get_prec(t_param *param, char **str,va_list *ap)
 {
-	//printf("	Ищу точность\n");
+	////printf("	Ищу точность\n");
 	if (*(*str + 1) >= '0' && *(*str + 1) <= '9')
 		param->precision = ft_atoi(*str + 1);
 	else if (*(*str + 1) == '-')
