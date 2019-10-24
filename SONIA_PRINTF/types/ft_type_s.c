@@ -1,26 +1,5 @@
 #include "../ft_printf.h"
 
-static char	*ft_memnew(size_t i, int lett) //если понадобится где-то ещё - убрать
-{
-	return (ft_memset(ft_strnew(i), lett, i));
-}
-
-static size_t	ft_strlen(const char *ap) //хмм, а мы будем либу подключать или как? 
-{
-	char *tmp;
-	
-	if (ap)
-	{
-		tmp = (char*)ap;
-		if (ap)
-			while (*tmp)
-				tmp++;
-		return (tmp - ap);
-	}
-	return (0);
-}
-
-
 static void		prec_pos(t_param param, char *ap, int tmp, t_buf *buf)
 {
 		if (ap != NULL)

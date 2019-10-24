@@ -1,17 +1,44 @@
 #include "ft_printf.h"
 
-void				ft_buf_add_ns(t_buf *new, char *str, size_t n, int flag)
+void				ft_buf_add_ns(t_buf *buf, char *str, size_t n, int flag)
 {
 	//printf("%s\n","тут я печатаю результат, но как-то иначе 0_о (NS)");
 }
-void				ft_buf_add_nc(t_buf *new, wchar_t c)
+void				ft_buf_add_nc(t_buf *buf, wchar_t c)
 {
 	//printf("%s\n","тут я печатаю результат, но как-то иначе 0_о (NC)");
 }
 
-void				ft_buf_add_s(t_buf *new, char *str, int flag)
+void				ft_buf_add_s(t_buf *buf, char *str, int flag)
 {
 	//printf("%s\n","тут я печатаю результат, но как-то иначе 0_о(S)");
+	int		putch;
+	size_t	len;
+	char	*beg;
+
+	len = ft_strlen(str);
+	flag == 0 ? beg = str : 0;
+	*str == '-' ? str++ : 0;
+	if (buf->top + 1 + len >= BUF_SIZE)
+	{
+		ft_print_res(buf);
+		ft_free_buf(buf);
+	}
+	buf->top + 1 + len >= BUF_SIZE ? buf->top = -1 : 0;
+	if (len >= BUF_SIZE)
+	{
+		buf->size += len;
+		write(1, str, len);
+	}
+	else
+		while (*str)
+		{
+			putch = ft_putchar(*str, buf->buf + 1 + buf->top);
+			buf->size += putch;
+			buf->top += putch;
+			str++;
+		}
+	flag == 0 ? free(beg) : 0;	
 }
 
 void            ft_print_res(t_buf *buf)

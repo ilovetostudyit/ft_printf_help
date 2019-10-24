@@ -73,3 +73,7 @@ void			ft_print_d(t_param param, char *i, t_buf *buf);
 int				ft_num_dig(uintmax_t n, int base);
 size_t			ft_strlen(const char *s);
 void			ft_space_check(char *str, t_param *param, t_buf *buf);
+void			ft_tire_check(char *str, t_buf *buf);
+void			ft_plus_check(char *str, t_param *param, t_buf *buf);
+char			*ft_memnew(size_t i, int lett);
+int				ft_putchar(unsigned long long c, char *str);

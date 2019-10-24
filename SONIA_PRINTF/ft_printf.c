@@ -6,7 +6,7 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 16:31:33 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/10/24 14:27:02 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/10/24 16:17:52 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int				ft_printf(char *str, ...)
 
 size_t          ft_get_res(t_buf *buf, t_param *param, char **str, va_list *ap)
 {
-    ////printf("%s\n", "получаю результат");
+    //printf("%s\n", "получаю результат");
     while (**str)
 	{
 		if (**str == '%')

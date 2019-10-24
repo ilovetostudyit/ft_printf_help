@@ -38,9 +38,9 @@ static int ft_type_d_j_z_check(t_param param, va_list *ap, t_buf *buf)
 
 void		ft_type_d(t_param param, va_list *ap, t_buf *buf)
 {
-	////printf("%s\n", "		Обрабатываем, флаг d");
+	//printf("%s\n", "		Обрабатываем, флаг d");
 	if (!(ft_type_d_l_ll_check(param, ap, buf)))
 		if (!(ft_type_d_h_hh_check(param, ap, buf)))
-			ft_type_d_h_hh_check(param, ap, buf);
+			ft_type_d_j_z_check(param, ap, buf);
 }
 

@@ -6,7 +6,7 @@
 #    By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 17:39:08 by ehaggon           #+#    #+#              #
-#    Updated: 2019/10/24 13:06:29 by ehaggon          ###   ########.fr        #
+#    Updated: 2019/10/24 16:22:20 by ehaggon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ types/ft_type_u_up.c types/ft_type_u.c \
 types/ft_type_x_up.c types/ft_type_x.c \
 ft_itoa_base.c ft_itoa.c \
 ft_num_dig.c types/ft_print_d.c ft_strlen.c\
+types/check_utils_d.c ft_memnew.c ft_putchar.c \
 
 OBJ = $(SRC:.c=.o)
 
