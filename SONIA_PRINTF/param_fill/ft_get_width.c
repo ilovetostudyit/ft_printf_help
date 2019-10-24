@@ -9,7 +9,7 @@ void    ft_get_width_main(t_param *param, char **str, va_list *ap)
 
 int 	ft_get_width(t_param *param, char **str,va_list *ap)
 {
-	//printf("	Ищу ширину\n");
+	////printf("	Ищу ширину\n");
 	if (**str == '*')
 	{
 		param->width = (long long)va_arg(*ap, long long);

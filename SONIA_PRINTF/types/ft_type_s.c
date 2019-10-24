@@ -84,4 +84,5 @@ void			ft_type_s(t_param param, char *ap, t_buf *buf) // разобраться 
 		prec_pos(param, ap, tmp, buf);
 	else
 		prec_neg(param, ap, tmp, buf);
+		//printf("%s\n", "			Обрабатываем, флаг s");
 }

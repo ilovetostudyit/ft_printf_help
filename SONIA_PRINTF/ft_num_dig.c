@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_buf.c                                      :+:      :+:    :+:   */
+/*   ft_num_dig.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 14:37:01 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/10/24 14:27:02 by ehaggon          ###   ########.fr       */
+/*   Created: 2019/07/04 14:14:29 by bprincip          #+#    #+#             */
+/*   Updated: 2019/10/24 12:43:44 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-//  ft_free_buf.c
-//  
-//
-//  Created by Hagraven Cummerata on 19/10/2019.
-//
-
 #include "ft_printf.h"
 
-void ft_free_buf(t_buf *buf)
+int		ft_num_dig(uintmax_t n, int base)
 {
-	free(buf->buf);
-	buf = NULL;
-    ////printf("%s\n", "освобождаем буфер");
-}
+	int res;
 
-void ft_null_str_buf(char *str)
-{
-	while (*str)
+	res = 0;
+	if (n == 0)
+		return (1);
+	while (n)
 	{
-		*str = 0;
-		str++;
+		res++;
+		n /= base;
 	}
+	return (res);
 }

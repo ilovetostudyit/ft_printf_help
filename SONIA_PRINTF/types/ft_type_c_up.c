@@ -12,7 +12,7 @@ static int			ft_len(wchar_t c)
 
 void			ft_type_c_up(t_param param, wchar_t c, t_buf *buf) //надо бы потестить
 {
-			//printf("%s\n", "		Обрабатываем, флаг C");
+			////printf("%s\n", "		Обрабатываем, флаг C");
 	int	len;
 	int paramlen;
 	char *str;
