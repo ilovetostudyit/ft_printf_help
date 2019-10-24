@@ -90,3 +90,5 @@ void			ft_type_s_minus(t_param param, char *ap, int tmp, t_buf *buf);
 void			ft_type_s_prec_neg(t_param param, char *ap, int tmp, t_buf *buf);
 void    		s_ap_check(t_buf *buf, char *ap);
 void   			s_width_check(t_param param, char *ap, int tmp, t_buf *buf);
+void    		s_pres_ap_check(t_param param, char *ap, int tmp, t_buf *buf);
+void    		s_pres_width_check(t_param param, char *ap, int tmp, t_buf *buf);
