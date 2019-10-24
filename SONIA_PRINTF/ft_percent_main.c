@@ -19,10 +19,10 @@ static void		ft_type_small_alpha(va_list *ap, char **str, t_param *param, t_buf 
 		ft_type_u(*param, ap, buf);
 	else if (**str == 'x')
 		ft_type_x(*param, ap, buf);
-	else if (**str == 'o')
-		ft_type_o(*param, *ap, buf);
 	else if (**str == 'f')
 		ft_type_f(*param, *ap, buf);
+	else if (**str == 'o')
+		ft_type_o(*param, *ap, buf);
 	else if (**str == 'p')
 		ft_type_p(*param, va_arg(*ap, void *), buf);
 	else if (**str)
