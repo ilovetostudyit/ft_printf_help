@@ -6,7 +6,7 @@
 #    By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 17:39:08 by ehaggon           #+#    #+#              #
-#    Updated: 2019/10/24 23:36:04 by ehaggon          ###   ########.fr        #
+#    Updated: 2019/10/25 02:37:34 by ehaggon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ param_fill/ft_get_width.c param_fill/ft_param_fill.c \
 types/ft_type_c_up.c types/ft_type_c/ft_type_c.c \
 types/ft_type_d_up.c types/ft_type_d/ft_type_d.c \
 types/ft_type_f_up.c types/ft_type_f.c \
-types/ft_type_o_up.c types/ft_type_o.c \
+types/ft_type_o_up.c \
 types/ft_type_percent.c \
 types/ft_type_s_up.c \
 types/ft_type_u_up.c types/ft_type_u.c \
@@ -32,7 +32,9 @@ ft_itoa_base_ll.c \
 types/ft_type_p/ft_type_p.c types/ft_type_p/ft_print_p.c \
 types/ft_type_p/check_utils_p.c \
 types/ft_type_s/ft_type_s.c types/ft_type_s/ft_print_s.c \
-types/ft_type_s/check_utils_s.c 
+types/ft_type_s/check_utils_s.c \
+types/ft_type_o/ft_type_o.c types/ft_type_o/ft_print_o.c \
+types/ft_type_o/ft_print_o_zero.c types/ft_type_o/check_utils_o.c 
 
 
 OBJ = $(SRC:.c=.o)

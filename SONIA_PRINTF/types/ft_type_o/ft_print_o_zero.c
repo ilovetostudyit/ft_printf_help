@@ -1,0 +1,48 @@
+#include "../../ft_printf.h"
+
+void			prec_neg_null(char *str, t_param param, t_buf *buf)
+{
+	int tmp;
+
+	tmp = 0;
+	param.hash == 0 ? tmp = 1 : 0;
+	if (param.minus == 0 && param.width - param.hash > tmp)
+	{
+		if (param.zero == 1)
+			ft_buf_add_s(buf, ft_memnew(param.width - param.hash - tmp, '0'), 0);
+		else if (param.zero == 0)
+			ft_buf_add_s(buf, ft_memnew(param.width - param.hash - tmp, ' '), 0);
+	}
+	param.hash == 1 ? ft_print_else(buf, '0') : 0;
+	param.hash != 1 ? ft_buf_add_s(buf, str, 0) : 0;
+	o_minus_check(&param, buf, tmp);
+}
+
+void			prec_pos_null(char *str, t_param param, t_buf *buf)
+{
+	if (param.minus == 0)
+	{
+		param.precision > -1 ? param.zero = 0 : 0;
+		if (param.width > param.precision)
+		{
+			if (param.zero == 1)
+				ft_buf_add_s(buf, ft_memnew(param.width - param.hash -
+											param.precision, '0'), 0);
+			else if (param.zero == 0)
+				ft_buf_add_s(buf, ft_memnew(param.width - (param.hash == 1 &&
+							param.precision < 1) - param.precision, ' '), 0);
+		}
+		o_hash_check(param, buf);
+		if (param.precision > 0)
+			ft_buf_add_s(buf, ft_memnew(param.precision, '0'), 0);
+	}
+	else
+	{
+		o_hash_check(param, buf);
+		if (param.precision > 0)
+			ft_buf_add_s(buf, ft_memnew(param.precision, '0'), 0);
+		if (param.width > param.precision && param.zero == 0)
+			ft_buf_add_s(buf, ft_memnew(param.width - (param.hash == 1 &&
+							param.precision < 1) - param.precision, ' '), 0);
+	}
+}

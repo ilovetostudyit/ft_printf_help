@@ -92,3 +92,8 @@ void    		s_ap_check(t_buf *buf, char *ap);
 void   			s_width_check(t_param param, char *ap, int tmp, t_buf *buf);
 void    		s_pres_ap_check(t_param param, char *ap, int tmp, t_buf *buf);
 void    		s_pres_width_check(t_param param, char *ap, int tmp, t_buf *buf);
+void			ft_print_o(t_param param, char *str, t_buf *buf);
+void			prec_pos_null(char *str, t_param param, t_buf *buf);
+void			prec_neg_null(char *str, t_param param, t_buf *buf);
+void   			o_hash_check(t_param param, t_buf *buf);
+void    		o_minus_check(t_param *param, t_buf *buf, int tmp);
