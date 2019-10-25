@@ -17,7 +17,7 @@ typedef struct		s_param
 	char			minus;
 	char			plus;
 	char			zero;
-	char			hasht;
+	char			hash;
 	char			space;
 	int				width;
 	int				precision;
@@ -33,12 +33,14 @@ void            ft_printf_init(t_buf *buf, t_param *param);
 void            ft_param_init(t_param *param);
 void			ft_free_buf(t_buf *buf);
 void            ft_print_res(t_buf *buf);
+void			ft_buf_add_s(t_buf *new, char *str, int flag); //я тут ненадолго
+void			ft_buf_add_nc(t_buf *new, wchar_t c); // я тоже :) 
+void			ft_buf_add_ns(t_buf *new, char *str, size_t n, int flag); //и я
 void            ft_percent_main(t_buf *buf, t_param *param, char **str, va_list *ap);
 void            ft_colour_main(char **str, t_buf *buf);
 void            ft_print_else(t_buf *buf, char str);
-int				ft_add_new_param(t_param *param, char **str, va_list *ap);
-void			ft_print_str(int top, char *str);
-void			ft_null_str(char *str);
+int				ft_param_fill(t_param *param, char **str, va_list *ap);
+void			ft_null_str_buf(char *str);
 
 void			ft_type_c(t_param param, char c, t_buf *buf);
 void			ft_type_c_up(t_param param, wchar_t c, t_buf *buf);
@@ -57,3 +59,17 @@ void			ft_type_u_up(t_param param, va_list ap, t_buf *buf);
 void			ft_type_x(t_param param, va_list *ap, t_buf *buf);
 void			ft_type_x_up(t_param param, va_list ap, t_buf *buf);
 
+int				ft_get_prec(t_param *param, char **str,va_list *ap);
+void			ft_get_length(t_param *param, char **str);
+int 			ft_get_width(t_param *param, char **str,va_list *ap);
+void			ft_get_width_main(t_param *param, char **str, va_list *ap);
+void 			ft_get_flags(t_param *param, char **str);
+int				ft_get_prec_main(t_param *param, char **str,va_list *ap);
+void			ft_get_other_flags(t_param *param, char **str);
+char			*ft_itoa_base(long long n, int base);
+int				ft_atoi(const char *str);
+char			*ft_itoa(long long n);
+void			ft_print_d(t_param param, char *i, t_buf *buf);
+int				ft_num_dig(uintmax_t n, int base);
+size_t			ft_strlen(const char *s);
+void			ft_space_check(char *str, t_param *param, t_buf *buf);
