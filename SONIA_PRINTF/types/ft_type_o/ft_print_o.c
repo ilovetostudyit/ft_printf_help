@@ -5,13 +5,7 @@ static void			prec_neg(char *str, t_param param, t_buf *buf)
 	int tmp;
 
 	tmp = ft_strlen(str);
-    if (param.minus == 0 && param.width - param.hash > tmp)
-    {
-	    if (param.zero == 1)
-		    ft_buf_add_s(buf, ft_memnew(param.width - param.hash - tmp, '0'), 0);
-	    else if (param.zero == 0)
-		    ft_buf_add_s(buf, ft_memnew(param.width - param.hash - tmp, ' '), 0);
-    }
+    o_minus_zero(&param, buf, tmp);
 	param.hash == 1 ? ft_print_else(buf, '0') : 0;
 	ft_buf_add_s(buf, str, 0);
     o_minus_check(&param, buf, tmp);
@@ -37,8 +31,7 @@ static void			minus_neg(char *str, t_param param, t_buf *buf)
     }
 	if (tmp >= param.precision && param.hash == 1)
 		ft_print_else(buf, '0');
-	if (param.precision > tmp)
-		ft_buf_add_s(buf, ft_memnew(param.precision - tmp, '0'), 0);
+	o_prec_check(&param, buf, tmp);
 	tmp != 0 ? ft_buf_add_s(buf, str, 0) : 0;
 }
 
@@ -49,8 +42,7 @@ static void			prec_pos(char *str, t_param param, t_buf *buf)
 	tmp = ft_strlen(str);
 	if (tmp >= param.precision && param.hash == 1)
 		ft_print_else(buf, '0');
-	if (param.precision > tmp)
-		ft_buf_add_s(buf, ft_memnew(param.precision - tmp, '0'), 0);
+	o_prec_check(&param, buf, tmp);
 	tmp != 0 ? ft_buf_add_s(buf, str, 0) : 0;
 	if (param.width > param.precision && param.width > tmp)
 		ft_buf_add_s(buf, ft_memnew(param.width -
