@@ -13,7 +13,7 @@ static void	ft_type_d_minus_pos(char *str, t_param param, int tmp, t_buf *buf)
 	ft_tire_check(str, buf);
 	if (param.precision > tmp_buf && param.zero == 0)
 		ft_buf_add_s(buf, ft_memnew(param.precision - tmp_buf, '0'), 0, 1);
-	ft_buf_add_s(buf, str, 0, 0);
+	ft_buf_add_s(buf, str, 0, 1);
 	if (param.width > param.precision && param.width > tmp && param.zero == 1)
 		ft_buf_add_s(buf, ft_memnew(param.width - param.space - param.plus -
 				(param.precision > tmp_buf ? param.precision : tmp_buf), '0'), 0, 1);
