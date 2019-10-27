@@ -4,7 +4,7 @@ static void		just_print(t_param param, char *i, t_buf *buf)
 {
 	param.plus == 1 && *i != '-' ? ft_print_else(buf, '+') : 0;
 	*i == '-' ? ft_print_else(buf, '-') : 0;
-	ft_buf_add_s(buf, i, 0);
+	ft_buf_add_s(buf, i, 0, 1);
 	param.hash == 1 && param.precision == 0 ? ft_print_else(buf, '.') : 0;
 }
 
@@ -13,11 +13,11 @@ static void		minus_pos(t_param param, char *i, int tmp, t_buf *buf)
 	if (param.space == 1 && param.plus == 0 && *i != '-')
 		ft_print_else(buf, ' ');
 	param.plus == 1 && *i != '-' ? ft_print_else(buf, '+') : 0;
-	ft_buf_add_s(buf, i, 0);
+	ft_buf_add_s(buf, i, 0, 1);
 	param.hash == 1 && param.precision == 0 ? ft_print_else(buf, '.') : 0;
 	if (param.width > tmp + (*i != '-' && (param.plus == 1 || param.space == 1)))
 		ft_buf_add_s(buf, ft_memnew(param.width - tmp - (*i != '-' &&
-			(param.plus == 1 || param.space == 1)), ' '), 0);
+			(param.plus == 1 || param.space == 1)), ' '), 0, 1);
 }
 
 static void		minus_neg(t_param param, char *i, int tmp, t_buf *buf)
@@ -27,7 +27,7 @@ static void		minus_neg(t_param param, char *i, int tmp, t_buf *buf)
 		if (param.zero == 0)
 		{
 			ft_buf_add_s(buf, ft_memnew(param.width - tmp - (*i != '-' &&
-				(param.plus == 1 || param.space == 1)), ' '), 0);
+				(param.plus == 1 || param.space == 1)), ' '), 0, 1);
 			((param.space == 1 && *i != '-') || (param.space == 1
 						&& param.plus == 0)) ? ft_print_else(buf, ' ') : 0;
 			param.plus == 1 && *i != '-' ? ft_print_else(buf, '+') : 0;
@@ -40,9 +40,9 @@ static void		minus_neg(t_param param, char *i, int tmp, t_buf *buf)
 			*i == '-' ? ft_print_else(buf, '-') : 0;
 			*i == '-' ? i++ : 0;
 			ft_buf_add_s(buf, ft_memnew(param.width - tmp -
-				(param.plus || *i == '-') - param.space, '0'), 0);
+				(param.plus || *i == '-') - param.space, '0'), 0, 1);
 		}
-		ft_buf_add_s(buf, i, 0);
+		ft_buf_add_s(buf, i, 0, 1);
 		param.hash == 1 && param.precision == 0 ? ft_print_else(buf, '.') : 0;
 	}
 	else

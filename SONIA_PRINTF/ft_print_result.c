@@ -35,7 +35,7 @@ void				ft_buf_add_nc(t_buf *buf, wchar_t c)
 	//printf("%s\n","тут я печатаю результат, но как-то иначе 0_о (NC)");
 }
 
-void				ft_buf_add_s(t_buf *buf, char *str, int flag)
+void				ft_buf_add_s(t_buf *buf, char *str, int flag, int d)
 {
 	//printf("%s\n","тут я печатаю результат, но как-то иначе 0_о(S)");
 	int		putch;
@@ -44,7 +44,8 @@ void				ft_buf_add_s(t_buf *buf, char *str, int flag)
 
 	len = ft_strlen(str);
 	flag == 0 ? beg = str : 0;
-	*str == '-' ? str++ : 0;
+	if (d == 1)
+		*str == '-' ? str++ : 0;
 	if (buf->top + 1 + len >= BUF_SIZE)
 	{
 		ft_print_res(buf);

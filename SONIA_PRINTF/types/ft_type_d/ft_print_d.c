@@ -12,15 +12,15 @@ static void	ft_type_d_minus_pos(char *str, t_param param, int tmp, t_buf *buf)
 	ft_plus_check(str, &param, buf);
 	ft_tire_check(str, buf);
 	if (param.precision > tmp_buf && param.zero == 0)
-		ft_buf_add_s(buf, ft_memnew(param.precision - tmp_buf, '0'), 0);
-	ft_buf_add_s(buf, str, 0);
+		ft_buf_add_s(buf, ft_memnew(param.precision - tmp_buf, '0'), 0, 1);
+	ft_buf_add_s(buf, str, 0, 0);
 	if (param.width > param.precision && param.width > tmp && param.zero == 1)
 		ft_buf_add_s(buf, ft_memnew(param.width - param.space - param.plus -
-				(param.precision > tmp_buf ? param.precision : tmp_buf), '0'), 0);
+				(param.precision > tmp_buf ? param.precision : tmp_buf), '0'), 0, 1);
 	if (param.width > param.precision && param.width > tmp)
 		ft_buf_add_s(buf, ft_memnew(param.width -
 			(param.space == 1 || param.plus == 1 || (tmp != tmp_buf)) -
-				(param.precision > tmp_buf ? param.precision : tmp_buf), ' '), 0);
+				(param.precision > tmp_buf ? param.precision : tmp_buf), ' '), 0, 1);
 }
 
 static void	ft_type_d_prec_neg(char *str, t_param param, int tmp, t_buf *buf)
@@ -30,15 +30,15 @@ static void	ft_type_d_prec_neg(char *str, t_param param, int tmp, t_buf *buf)
 	ft_space_check(str, &param, buf);
 	if (param.minus == 0 && param.zero == 0 && param.width > tmp)
 		ft_buf_add_s(buf, ft_memnew(param.width - tmp -
-			(param.space == 1 && param.plus == 0 && *str != '-'), ' '), 0);
+			(param.space == 1 && param.plus == 0 && *str != '-'), ' '), 0, 1);
 	ft_plus_check(str, &param, buf);
 	ft_tire_check(str, buf);
 	if (param.minus == 0 && param.zero == 1 && param.width > tmp)
 		ft_buf_add_s(buf, ft_memnew(param.width - tmp -
-			(param.space == 1 && param.plus == 0 && *str != '-'), '0'), 0);
-	ft_buf_add_s(buf, str, 0);
+			(param.space == 1 && param.plus == 0 && *str != '-'), '0'), 0, 1);
+	ft_buf_add_s(buf, str, 0, 1);
 	if (param.minus == 1 && param.width > tmp)
-		ft_buf_add_s(buf, ft_memnew(param.width - tmp - param.space, ' '), 0); 
+		ft_buf_add_s(buf, ft_memnew(param.width - tmp - param.space, ' '), 0, 1); 
 }
 
 static void	ft_type_d_prec_pos(char *str, t_param param, int tmp, t_buf *buf)
@@ -53,11 +53,11 @@ static void	ft_type_d_prec_pos(char *str, t_param param, int tmp, t_buf *buf)
 	if (param.width > param.precision && param.width > tmp)
 		ft_buf_add_s(buf, ft_memnew(param.width - param.space -
 		(param.plus || *str == '-') - (param.precision > tmp_buf ? param.precision
-		: tmp_buf), ' '), 0);
+		: tmp_buf), ' '), 0, 1);
 	ft_plus_check(str, &param, buf);
 	ft_tire_check(str, buf);
 	if (param.precision > tmp_buf)
-		ft_buf_add_s(buf, ft_memnew(param.precision - tmp_buf, '0'), 0);
+		ft_buf_add_s(buf, ft_memnew(param.precision - tmp_buf, '0'), 0, 1);
 	ft_zero_check(str, &param, buf);
 }
 

@@ -9,7 +9,7 @@ void    o_hash_check(t_param *param, t_buf *buf)
 void    o_minus_check(t_param *param, t_buf *buf, int tmp)
 {
     if (param->minus == 1 && param->width - param->hash > tmp)
-		ft_buf_add_s(buf, ft_memnew(param->width - param->hash - tmp, ' '), 0);
+		ft_buf_add_s(buf, ft_memnew(param->width - param->hash - tmp, ' '), 0, 0);
 }
 
 void    o_minus_zero(t_param *param, t_buf *buf, int tmp)
@@ -17,14 +17,15 @@ void    o_minus_zero(t_param *param, t_buf *buf, int tmp)
     if (param->minus == 0 && param->width - param->hash > tmp)
 	{
 		if (param->zero == 1)
-			ft_buf_add_s(buf, ft_memnew(param->width - param->hash - tmp, '0'), 0);
+			ft_buf_add_s(buf, ft_memnew(param->width - param->hash - tmp, '0'), 0, 0);
 		else if (param->zero == 0)
-			ft_buf_add_s(buf, ft_memnew(param->width - param->hash - tmp, ' '), 0);
+			ft_buf_add_s(buf, ft_memnew(param->width - param->hash - tmp, ' '), 0, 0);
 	}
 }
 
-void    o_prec_check(t_param *param, t_buf *buf, int tmp)
+void    o_prec_check(t_param param, t_buf *buf, int tmp)
 {
-    if (param->precision > 0)
-			ft_buf_add_s(buf, ft_memnew(param->precision - tmp, '0'), 0);
+	//printf("%d\n", (param.precision - tmp));
+    if (param.precision > 0 && (param.precision >= tmp))
+			ft_buf_add_s(buf, ft_memnew(param.precision - tmp, '0'), 0, 0);
 }
