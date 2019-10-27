@@ -6,7 +6,7 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 16:31:33 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/10/27 18:29:09 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/10/28 00:26:45 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ size_t			ft_get_res(t_buf *buf, t_param *param, char **str, va_list ap)
 {
 	while (**str)
 	{
+		//printf("%s\n","wow1");
 		if (**str == '%')
 			ft_percent_main(buf, *param, str, ap);
 		else

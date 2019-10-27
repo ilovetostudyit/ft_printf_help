@@ -72,5 +72,5 @@ char			*ft_float_f(long double f, int precision)
 	s = ((*(t_uint128 *)&f) >> 79) & 1;
 	e = ((*(t_uint128 *)&f) >> 64) & 0x7FFF;
 	m = (*(t_uint128 *)&f) & 0xFFFFFFFFFFFFFFFF;
-	return (ft_ldouble(s, e, m, precision));
+	return (ft_ldouble(s, e, m, precision));	
 }

@@ -34,7 +34,7 @@ static void		ft_type(va_list ap, char **str, t_param param, t_buf *buf)
 
 void ft_percent_main(t_buf *buf, t_param param, char **str, va_list ap)
 {
-	////printf("%s\n", "Обрабатываем проценты");
+	//printf("%s\n", "Обрабатываем проценты");
 	*str = *str + 1;
 	ft_param_fill(&param, str, ap);
 	ft_type(ap, str, param, buf);

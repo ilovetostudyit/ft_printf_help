@@ -22,10 +22,12 @@ static void		minus_pos(t_param param, char *i, int tmp, t_buf *buf)
 
 static void		minus_neg(t_param param, char *i, int tmp, t_buf *buf)
 {
+	//printf("%s\n", "1");
 	if (param.width > tmp + (*i != '-' && (param.plus == 1 || param.space == 1)))
 	{
 		if (param.zero == 0)
 		{
+			//printf("%s\n", "2");
 			ft_buf_add_s(buf, ft_memnew(param.width - tmp - (*i != '-' &&
 				(param.plus == 1 || param.space == 1)), ' '), 0, 1);
 			((param.space == 1 && *i != '-') || (param.space == 1
@@ -34,6 +36,7 @@ static void		minus_neg(t_param param, char *i, int tmp, t_buf *buf)
 		}
 		else
 		{
+			//printf("%s\n", "3");
 			((param.space == 1 && *i != '-') || (param.space == 1 &&
 			param.plus == 0)) ? ft_print_else(buf, ' ') : 0;
 			param.plus == 1 && *i != '-' ? ft_print_else(buf, '+') : 0;
@@ -42,8 +45,11 @@ static void		minus_neg(t_param param, char *i, int tmp, t_buf *buf)
 			ft_buf_add_s(buf, ft_memnew(param.width - tmp -
 				(param.plus || *i == '-') - param.space, '0'), 0, 1);
 		}
+		//printf("%s\n", i);
 		ft_buf_add_s(buf, i, 0, 1);
+		//printf("%s\n", "4.5");
 		param.hash == 1 && param.precision == 0 ? ft_print_else(buf, '.') : 0;
+		//printf("%s\n", "5");
 	}
 	else
 		just_print(param, i, buf);
