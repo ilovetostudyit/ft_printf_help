@@ -46,7 +46,7 @@ static void		minus_neg(t_param param, char *i, int tmp, t_buf *buf)
 				(param.plus || *i == '-') - param.space, '0'), 0, 1);
 		}
 		//printf("%s\n", i);
-		ft_buf_add_s(buf, i, 0, 1);
+		ft_buf_add_s(buf, i, 1, 1);
 		//printf("%s\n", "4.5");
 		param.hash == 1 && param.precision == 0 ? ft_print_else(buf, '.') : 0;
 		//printf("%s\n", "5");

@@ -38,7 +38,7 @@ void				ft_buf_add_s(t_buf *buf, char *str, int flag, int d)
 	char	*beg;
 
 	len = ft_strlen(str);
-	//flag == 0 ? *beg = *str : 0;
+	flag == 0 ? beg = str : 0;
 	if (d == 1)
 		*str == '-' ? str++ : 0;
 	if (buf->top + 1 + len >= BUF_SIZE)
@@ -60,7 +60,7 @@ void				ft_buf_add_s(t_buf *buf, char *str, int flag, int d)
 			buf->top += putch;
 			str++;
 		}
-	//(str) ? free(str) : 0;	
+	(flag == 0) ? free(beg) : 0;	
 }
 
 void            ft_print_res(t_buf *buf)
