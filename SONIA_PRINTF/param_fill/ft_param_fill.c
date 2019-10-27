@@ -1,6 +1,6 @@
 #include "../ft_printf.h"
 
-int				ft_param_fill(t_param *param, char **str, va_list *ap)
+int				ft_param_fill(t_param *param, char **str, va_list ap)
 {
 	////printf("	Добавляем новый параметр\n");
 	ft_get_flags(param, str);

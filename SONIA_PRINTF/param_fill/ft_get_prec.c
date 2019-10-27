@@ -1,6 +1,6 @@
 #include "../ft_printf.h"
 
-int     ft_get_prec_main(t_param *param, char **str,va_list *ap)
+int     ft_get_prec_main(t_param *param, char **str,va_list ap)
 {
     if (**str == '.')
 		if ((ft_get_prec(param, str, ap)) == -1)
@@ -8,7 +8,7 @@ int     ft_get_prec_main(t_param *param, char **str,va_list *ap)
     return(0);
 }
 
-int 	ft_get_prec(t_param *param, char **str,va_list *ap)
+int 	ft_get_prec(t_param *param, char **str,va_list ap)
 {
 	////printf("	Ищу точность\n");
 	if (*(*str + 1) >= '0' && *(*str + 1) <= '9')
@@ -17,7 +17,7 @@ int 	ft_get_prec(t_param *param, char **str,va_list *ap)
 		param->precision = -2;
 	else if (*(*str + 1) == '*')
 	{
-		param->precision = (unsigned long long)va_arg(*ap, unsigned long long);
+		param->precision = (unsigned long long)va_arg(ap, unsigned long long);
 		*str = *str + 1;
 	}
 	else if (*(*str + 1) == '\0')
