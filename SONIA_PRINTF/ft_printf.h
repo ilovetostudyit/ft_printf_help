@@ -30,6 +30,8 @@ void            ft_buf_init(t_buf *buf);
 char			*ft_strnew(size_t size);
 void            *ft_memset(void *b, int c, size_t len);
 void			*ft_memset_char(char *str, t_param param, char c);
+int				ft_isdigit(int c);
+char			*ft_strdup(const char *src);
 void            ft_printf_init(t_buf *buf, t_param *param);
 void            ft_param_init(t_param *param);
 void			ft_free_buf(t_buf *buf);
@@ -77,7 +79,7 @@ void			ft_space_check(char *str, t_param *param, t_buf *buf);
 void			ft_tire_check(char *str, t_buf *buf);
 void			ft_plus_check(char *str, t_param *param, t_buf *buf);
 char			*ft_memnew(size_t i, int lett);
-int				ft_putchar(unsigned long long c, char *str);
+int				ft_putchar(unsigned long long c, char *str); // странный путчар
 void			ft_zero_check(char *str, t_param *param, t_buf *buf);
 char			*ft_itoa_base_ll(uintmax_t n, int base);
 void			ft_type_p_zero(t_param param, int len, t_buf *buf);
