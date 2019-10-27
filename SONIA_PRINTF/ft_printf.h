@@ -24,6 +24,22 @@ typedef struct		s_param
 }					t_param;
 
 # define BUF_SIZE 1000
+# define DOTA_S 10000
+# define BASE_INT 10
+
+typedef	__uint128_t	t_uint128;
+
+typedef struct		s_lnum
+{
+	unsigned char	lnum[DOTA_S];
+	int				size;
+}					t_lnum;
+
+
+void			ft_lnum_new(t_lnum *a);
+void			ft_lnum_plus(t_lnum *a, t_lnum b);
+void			ft_lnum_plus2(t_lnum *a, int b);
+void			ft_lnum_mul(t_lnum *a, int b);
 int				ft_printf(char *str, ...);
 size_t          ft_get_res(t_buf *buf, t_param *param, char **str, va_list ap);
 void            ft_buf_init(t_buf *buf);
@@ -106,3 +122,18 @@ void			ft_type_x_up(t_param param, va_list ap, t_buf *buf);
 void    		ft_print_x_up(t_param param, char *str, t_buf *buf);
 void			minus_pos_null(t_param param, char *str, int tmp, t_buf *buf);
 void			minus_neg_null(t_param param, char *str, int tmp, t_buf *buf);
+
+char			*ft_float_f(long double f, int precision);
+char			*ft_strjoin(char *s1, char *s2);
+char			*ft_strndup(const char *s1, size_t n);
+int				ft_max(int a, int b);
+char			*ft_un(char *main, char *s);
+void			ft_len_frac_more_prec(int tmp, int prec, char **frac);
+void			ft_zero_m_e(char **main, char **frac);
+void			ft_bigint_ulong(int e,\
+				unsigned long long m, char **main, char **frac);
+void			ft_max_min_bigint(int e,\
+				unsigned long long m, char **main, char **frac);
+
+	
+

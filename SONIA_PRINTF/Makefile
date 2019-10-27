@@ -6,7 +6,7 @@
 #    By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 17:39:08 by ehaggon           #+#    #+#              #
-#    Updated: 2019/10/25 06:00:22 by ehaggon          ###   ########.fr        #
+#    Updated: 2019/10/27 16:39:24 by ehaggon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ param_fill/ft_get_length.c param_fill/ft_get_prec.c \
 param_fill/ft_get_width.c param_fill/ft_param_fill.c \
 types/ft_type_c_up.c types/ft_type_c/ft_type_c.c \
 types/ft_type_d_up.c types/ft_type_d/ft_type_d.c \
-types/ft_type_f_up.c types/ft_type_f.c \
+types/ft_type_f_up.c \
 types/ft_type_o_up.c \
 types/ft_type_percent.c \
 types/ft_type_s_up.c \
@@ -38,6 +38,10 @@ types/ft_type_u/ft_type_u.c types/ft_type_u/ft_print_u.c \
 types/ft_type_u/check_utils_u.c \
 types/ft_type_x/ft_type_x.c types/ft_type_x/ft_print_x.c \
 types/ft_type_x_up/ft_type_x_up.c types/ft_type_x_up/ft_print_x_up.c \
+types/ft_type_f/ft_type_f.c types/ft_type_f/ft_float_analyse.c\
+types/ft_type_f/ft_float_utils.c types/ft_type_f/ft_float_utils_o.c\
+types/ft_type_f/ft_float_utils_long.c \
+ft_strndup.c ft_strjoin.c ft_lnum/ft_lnum.c \
 
 
 
