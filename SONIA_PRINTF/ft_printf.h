@@ -51,7 +51,6 @@ void            ft_param_init(t_param *param);
 void			ft_free_buf(t_buf *buf);
 void            ft_print_res(t_buf *buf);
 void			ft_buf_add_s(t_buf *new, char *str, int flag, int d); //я тут ненадолго
-void			ft_buf_add_nc(t_buf *new, wchar_t c); // я тоже :) 
 void			ft_buf_add_ns(t_buf *new, char *str, size_t n, int flag); //и я
 void            ft_percent_main(t_buf *buf, t_param param, char **str, va_list ap);
 void            ft_colour_main(char **str, t_buf *buf);

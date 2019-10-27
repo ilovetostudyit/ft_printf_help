@@ -30,11 +30,6 @@ void				ft_buf_add_ns(t_buf *buf, char *str, size_t n, int flag)
 	flag == 0 ? free(beg) : 0;
 }
 
-void				ft_buf_add_nc(t_buf *buf, wchar_t c)
-{
-	//printf("%s\n","тут я печатаю результат, но как-то иначе 0_о (NC)");
-}
-
 void				ft_buf_add_s(t_buf *buf, char *str, int flag, int d)
 {
 	//printf("%s\n","тут я печатаю результат, но как-то иначе 0_о(S)");

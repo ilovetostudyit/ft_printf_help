@@ -6,7 +6,7 @@
 #    By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 17:39:08 by ehaggon           #+#    #+#              #
-#    Updated: 2019/10/27 16:39:24 by ehaggon          ###   ########.fr        #
+#    Updated: 2019/10/27 18:19:41 by ehaggon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,9 @@ ft_free_buf.c ft_memset.c ft_percent_main.c ft_colour_main.c \
 ft_strnew.c ft_print_result.c param_fill/ft_get_flags.c \
 param_fill/ft_get_length.c param_fill/ft_get_prec.c \
 param_fill/ft_get_width.c param_fill/ft_param_fill.c \
-types/ft_type_c_up.c types/ft_type_c/ft_type_c.c \
-types/ft_type_d_up.c types/ft_type_d/ft_type_d.c \
-types/ft_type_f_up.c \
-types/ft_type_o_up.c \
+types/ft_type_c/ft_type_c.c \
+types/ft_type_d/ft_type_d.c \
 types/ft_type_percent.c \
-types/ft_type_s_up.c \
-types/ft_type_u_up.c \
 ft_itoa_base.c ft_itoa.c \
 ft_num_dig.c types/ft_type_d/ft_print_d.c ft_strlen.c\
 types/ft_type_d/check_utils_d.c ft_memnew.c ft_putchar.c \
