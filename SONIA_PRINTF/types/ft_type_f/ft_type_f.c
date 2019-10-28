@@ -6,7 +6,7 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 01:44:31 by hcummera          #+#    #+#             */
-/*   Updated: 2019/10/28 05:51:59 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/10/28 06:48:05 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,19 @@ static void		minus_pos(t_param p, char *i, int tmp, t_buf *buf)
 
 static void		minus_neg(t_param p, char *i, int tmp, t_buf *buf)
 {
+	tmp = ft_strlen(i);
 	if (p.width > tmp + ((buf->float_minus == 0) && (p.plus == 1 || p.space == 1)))
 	{
 		if (p.zero == 0)
 		{
-			ft_buf_add_s(buf, ft_memnew(p.width - tmp - ((buf->float_minus == 0) &&
-				(p.plus == 1 || p.space == 1)), ' '), 0, 1);
+			if (p.width - tmp - (buf->float_minus == 1)
+			- ((p.plus == 1 || p.space == 1)) > 0)
+				ft_buf_add_s(buf, ft_memnew(p.width - tmp - (buf->float_minus == 1)
+				- ((p.plus == 1 || p.space == 1)), ' '), 0, 1);
 			((p.space == 1 && (buf->float_minus == 0)) || (p.space == 1
 						&& p.plus == 0)) ? ft_print_else(buf, ' ') : 0;
 			p.plus == 1 && (buf->float_minus == 0) ? ft_print_else(buf, '+') : 0;
+			(buf->float_minus == 1) ? ft_print_else(buf, '-') : 0;
 		}
 		else
 		{
