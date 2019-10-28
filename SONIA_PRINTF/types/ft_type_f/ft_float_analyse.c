@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_float_analyse.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 01:43:50 by hcummera          #+#    #+#             */
-/*   Updated: 2019/10/28 01:43:53 by hcummera         ###   ########.fr       */
+/*   Updated: 2019/10/28 05:46:20 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,14 @@ static char		*ft_ldouble(int s, int e, unsigned long long m, int prec)
 	return (main);
 }
 
-char			*ft_float_f(long double f, int precision)
+char			*ft_float_f(long double f, int precision, t_buf *buf)
 {
 	int					s;
 	long long			e;
 	unsigned long long	m;
 
+	if (f < 0)
+		buf->float_minus = 1;
 	if (f == 1.0 / 0.0)
 		return (ft_strndup("inf", 3));
 	if (f == -1.0 / 0.0)

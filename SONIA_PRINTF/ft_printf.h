@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 04:35:05 by hcummera          #+#    #+#             */
-/*   Updated: 2019/10/28 04:35:07 by hcummera         ###   ########.fr       */
+/*   Updated: 2019/10/28 05:46:46 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct		s_buf
 	size_t			size;
 	int				err;
 	char			*buf;
+	int				float_minus;
 }					t_buf;
 
 typedef struct		s_param
@@ -132,7 +133,7 @@ void				ft_type_x_up(t_param p, va_list ap, t_buf *buf);
 void				ft_print_x_up(t_param p, char *str, t_buf *buf);
 void				minus_pos_null(t_param p, char *str, int tmp, t_buf *buf);
 void				minus_neg_null(t_param p, char *str, int tmp, t_buf *buf);
-char				*ft_float_f(long double f, int precision);
+char				*ft_float_f(long double f, int precision, t_buf *buf);
 char				*ft_strjoin(char *s1, char *s2);
 char				*ft_strndup(const char *s1, size_t n);
 int					ft_max(int a, int b);

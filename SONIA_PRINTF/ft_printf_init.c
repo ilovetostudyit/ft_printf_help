@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_init.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 04:35:16 by hcummera          #+#    #+#             */
-/*   Updated: 2019/10/28 04:35:17 by hcummera         ###   ########.fr       */
+/*   Updated: 2019/10/28 05:43:49 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_buf_init(t_buf *buf)
 	buf->err = 0;
 	buf->size = 0;
 	buf->top = -1;
+	buf->float_minus = 0;
 	if (!(buf->buf = ft_strnew(BUF_SIZE)))
 		return ;
 }
