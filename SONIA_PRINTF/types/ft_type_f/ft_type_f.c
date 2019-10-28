@@ -6,7 +6,7 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 01:44:31 by hcummera          #+#    #+#             */
-/*   Updated: 2019/10/28 07:04:40 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/10/28 07:33:02 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static void		minus_pos(t_param p, char *i, int tmp, t_buf *buf)
 	if (p.space == 1 && p.plus == 0 && (buf->float_minus == 0))
 		ft_print_else(buf, ' ');
 	p.plus == 1 && (buf->float_minus == 0) ? ft_print_else(buf, '+') : 0;
+	(buf->float_minus == 1) ? ft_print_else(buf, '-') : 0;
 	ft_buf_add_s(buf, i, 0, 1);
 	p.hash == 1 && p.precision == 0 ? ft_print_else(buf, '.') : 0;
 	if (p.width > tmp + ((buf->float_minus == 0) && (p.plus == 1 || p.space == 1)))
@@ -34,13 +35,13 @@ static void		minus_pos(t_param p, char *i, int tmp, t_buf *buf)
 
 static void		minus_neg(t_param p, char *i, int tmp, t_buf *buf)
 {
-	if (p.width > tmp + ((buf->float_minus == 0) && (p.plus == 1 || p.space == 1)))
+	tmp = (*i == '-') ? tmp : tmp + buf->float_minus;
+	if (p.width > (tmp + (p.plus == 1 || p.space == 1)))
 	{
 		if (p.zero == 0)
 		{
-			tmp = (*i == '-') ? tmp : tmp + buf->float_minus;
-			if (p.width - tmp - ((p.plus == 1 || p.space == 1)) > 0)
-				ft_buf_add_s(buf, ft_memnew(p.width - tmp
+			//tmp = (*i == '-') ? tmp : tmp + buf->float_minus;
+			ft_buf_add_s(buf, ft_memnew(p.width - tmp
 				- ((p.plus == 1 || p.space == 1)), ' '), 0, 1);
 			((p.space == 1 && (buf->float_minus == 0)) || (p.space == 1
 						&& p.plus == 0)) ? ft_print_else(buf, ' ') : 0;
@@ -53,11 +54,10 @@ static void		minus_neg(t_param p, char *i, int tmp, t_buf *buf)
 			p.plus == 0)) ? ft_print_else(buf, ' ') : 0;
 			p.plus == 1 && (buf->float_minus == 0) ? ft_print_else(buf, '+') : 0;
 			(buf->float_minus == 1) ? ft_print_else(buf, '-') : 0;
-			(buf->float_minus == 1) ? i++ : 0;
-			if ((p.width - tmp -
-				(p.plus || (buf->float_minus == 1)) - p.space) > 0)
-				ft_buf_add_s(buf, ft_memnew(p.width - tmp -
-					(p.plus || (buf->float_minus == 1)) - p.space, '0'), 0, 1);
+			//(buf->float_minus == 1) ? i++ : 0;
+			if ((p.width - tmp - (p.plus == 1 || p.space == 1)) > 0)
+				ft_buf_add_s(buf, ft_memnew((p.width - tmp - (p.plus == 1 
+					|| p.space == 1)), '0'), 0, 1);
 		}
 		ft_buf_add_s(buf, i, 1, 1);
 		p.hash == 1 && p.precision == 0 ? ft_print_else(buf, '.') : 0;
