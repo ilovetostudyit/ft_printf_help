@@ -6,7 +6,7 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 01:43:50 by hcummera          #+#    #+#             */
-/*   Updated: 2019/10/28 05:46:20 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/10/28 08:58:35 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ char			*ft_float_f(long double f, int precision, t_buf *buf)
 	unsigned long long	m;
 
 	if (f < 0)
-		buf->float_minus = 1;
+		buf->fm = 1;
 	if (f == 1.0 / 0.0)
 		return (ft_strndup("inf", 3));
 	if (f == -1.0 / 0.0)

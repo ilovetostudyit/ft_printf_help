@@ -6,7 +6,7 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 04:35:05 by hcummera          #+#    #+#             */
-/*   Updated: 2019/10/28 05:46:46 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/10/28 08:58:35 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct		s_buf
 	size_t			size;
 	int				err;
 	char			*buf;
-	int				float_minus;
+	int				fm;
 }					t_buf;
 
 typedef struct		s_param
