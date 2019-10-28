@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_result.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 04:35:25 by hcummera          #+#    #+#             */
-/*   Updated: 2019/10/28 04:35:27 by hcummera         ###   ########.fr       */
+/*   Updated: 2019/10/28 09:13:08 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void			print_null(t_buf *buf)
 	ft_null_str_buf(buf->buf);
 }
 
-void				ft_buf_add_s(t_buf *buf, char *str, int flag, int d)
+void				ft_buf_s(t_buf *buf, char *str, int flag, int d)
 {
 	int		putch;
 	size_t	len;

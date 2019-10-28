@@ -6,7 +6,7 @@
 #    By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/23 17:39:08 by ehaggon           #+#    #+#              #
-#    Updated: 2019/10/27 18:19:41 by ehaggon          ###   ########.fr        #
+#    Updated: 2019/10/28 09:23:30 by ehaggon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ types/ft_type_x/ft_type_x.c types/ft_type_x/ft_print_x.c \
 types/ft_type_x_up/ft_type_x_up.c types/ft_type_x_up/ft_print_x_up.c \
 types/ft_type_f/ft_type_f.c types/ft_type_f/ft_float_analyse.c\
 types/ft_type_f/ft_float_utils.c types/ft_type_f/ft_float_utils_o.c\
-types/ft_type_f/ft_float_utils_long.c \
+types/ft_type_f/ft_float_utils_long.c types/ft_type_f/ft_float_utils_other.c \
 ft_strndup.c ft_strjoin.c ft_lnum/ft_lnum.c \
 
 

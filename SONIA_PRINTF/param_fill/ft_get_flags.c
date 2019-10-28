@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_flags.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 01:16:04 by hcummera          #+#    #+#             */
-/*   Updated: 2019/10/28 01:16:08 by hcummera         ###   ########.fr       */
+/*   Updated: 2019/10/28 09:11:41 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	ft_get_flags(t_param *param, char **str)
 	{
 		(**str == '#') ? param->hash = 1 : 0;
 		(**str == '-') ? param->minus = 1 : 0;
-		(**str == '+') ? param->plus = 1 : 0;
-		(**str == ' ') ? param->space = 1 : 0;
+		(**str == '+') ? param->pl = 1 : 0;
+		(**str == ' ') ? param->spc = 1 : 0;
 		(**str == '0') ? param->zero = 1 : 0;
 		*str += 1;
 	}
-	(param->space == 1 && param->plus == 1) ? param->space = 0 : 1;
+	(param->spc == 1 && param->pl == 1) ? param->spc = 0 : 1;
 	(param->zero == 1 && param->minus == 1) ? param->zero = 0 : 1;
 }
 

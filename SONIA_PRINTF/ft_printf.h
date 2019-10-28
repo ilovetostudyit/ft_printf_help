@@ -6,7 +6,7 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 04:35:05 by hcummera          #+#    #+#             */
-/*   Updated: 2019/10/28 08:58:35 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/10/28 09:24:23 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ typedef struct		s_param
 {
 	unsigned char	length;
 	char			minus;
-	char			plus;
+	char			pl;
 	char			zero;
 	char			hash;
-	char			space;
-	int				width;
+	char			spc;
+	int				w;
 	int				precision;
 }					t_param;
 
@@ -64,7 +64,7 @@ void				ft_printf_init(t_buf *buf, t_param *p);
 void				ft_param_init(t_param *p);
 void				ft_free_buf(t_buf *buf);
 void				ft_print_res(t_buf *buf);
-void				ft_buf_add_s(t_buf *new, char *str, int flag, int d);
+void				ft_buf_s(t_buf *new, char *str, int flag, int d);
 void				ft_buf_add_ns(t_buf *new, char *str, size_t n, int flag);
 void				ft_percent_main(t_buf *b, t_param p, char **s, va_list ap);
 void				ft_colour_main(char **str, t_buf *buf);
@@ -144,5 +144,6 @@ void				ft_bigint_ulong(int e,\
 							unsigned long long m, char **main, char **frac);
 void				ft_max_min_bigint(int e,
 							unsigned long long m, char **main, char **frac);
+void				minus_neg_f(t_param p, char *i, int tmp, t_buf *buf);
 
 #endif
