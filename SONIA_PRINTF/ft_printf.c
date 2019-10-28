@@ -32,7 +32,6 @@ size_t			ft_get_res(t_buf *buf, t_param *param, char **str, va_list ap)
 {
 	while (**str)
 	{
-		//printf("%s\n","wow1");
 		if (**str == '%')
 			ft_percent_main(buf, *param, str, ap);
 		else

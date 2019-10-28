@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_percent_main.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 04:35:33 by hcummera          #+#    #+#             */
+/*   Updated: 2019/10/28 04:35:35 by hcummera         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static void		ft_type_cont(va_list ap, char **str, t_param param, t_buf *buf)
+static void	ft_type_cont(va_list ap, char **str, t_param param, t_buf *buf)
 {
 	if (**str == 'u')
 		ft_type_u(param, ap, buf);
@@ -16,7 +28,7 @@ static void		ft_type_cont(va_list ap, char **str, t_param param, t_buf *buf)
 		ft_type_c(param, **str, buf);
 }
 
-static void		ft_type(va_list ap, char **str, t_param param, t_buf *buf)
+static void	ft_type(va_list ap, char **str, t_param param, t_buf *buf)
 {
 	if (**str == 'c')
 		ft_type_c(param, (char)va_arg(ap, int), buf);
@@ -32,9 +44,8 @@ static void		ft_type(va_list ap, char **str, t_param param, t_buf *buf)
 		ft_type_cont(ap, str, param, buf);
 }
 
-void ft_percent_main(t_buf *buf, t_param param, char **str, va_list ap)
+void		ft_percent_main(t_buf *buf, t_param param, char **str, va_list ap)
 {
-	//printf("%s\n", "Обрабатываем проценты");
 	*str = *str + 1;
 	ft_param_fill(&param, str, ap);
 	ft_type(ap, str, param, buf);

@@ -1,81 +1,87 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_type_f.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 01:44:31 by hcummera          #+#    #+#             */
+/*   Updated: 2019/10/28 01:44:32 by hcummera         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../ft_printf.h"
 
-static void		just_print(t_param param, char *i, t_buf *buf)
+static void		just_print(t_param p, char *i, t_buf *buf)
 {
-	param.plus == 1 && *i != '-' ? ft_print_else(buf, '+') : 0;
+	p.plus == 1 && *i != '-' ? ft_print_else(buf, '+') : 0;
 	*i == '-' ? ft_print_else(buf, '-') : 0;
 	ft_buf_add_s(buf, i, 0, 1);
-	param.hash == 1 && param.precision == 0 ? ft_print_else(buf, '.') : 0;
+	p.hash == 1 && p.precision == 0 ? ft_print_else(buf, '.') : 0;
 }
 
-static void		minus_pos(t_param param, char *i, int tmp, t_buf *buf)
+static void		minus_pos(t_param p, char *i, int tmp, t_buf *buf)
 {
-	if (param.space == 1 && param.plus == 0 && *i != '-')
+	if (p.space == 1 && p.plus == 0 && *i != '-')
 		ft_print_else(buf, ' ');
-	param.plus == 1 && *i != '-' ? ft_print_else(buf, '+') : 0;
+	p.plus == 1 && *i != '-' ? ft_print_else(buf, '+') : 0;
 	ft_buf_add_s(buf, i, 0, 1);
-	param.hash == 1 && param.precision == 0 ? ft_print_else(buf, '.') : 0;
-	if (param.width > tmp + (*i != '-' && (param.plus == 1 || param.space == 1)))
-		ft_buf_add_s(buf, ft_memnew(param.width - tmp - (*i != '-' &&
-			(param.plus == 1 || param.space == 1)), ' '), 0, 1);
+	p.hash == 1 && p.precision == 0 ? ft_print_else(buf, '.') : 0;
+	if (p.width > tmp + (*i != '-' && (p.plus == 1 || p.space == 1)))
+		ft_buf_add_s(buf, ft_memnew(p.width - tmp - (*i != '-' &&
+			(p.plus == 1 || p.space == 1)), ' '), 0, 1);
 }
 
-static void		minus_neg(t_param param, char *i, int tmp, t_buf *buf)
+static void		minus_neg(t_param p, char *i, int tmp, t_buf *buf)
 {
-	//printf("%s\n", "1");
-	if (param.width > tmp + (*i != '-' && (param.plus == 1 || param.space == 1)))
+	if (p.width > tmp + (*i != '-' && (p.plus == 1 || p.space == 1)))
 	{
-		if (param.zero == 0)
+		if (p.zero == 0)
 		{
-			//printf("%s\n", "2");
-			ft_buf_add_s(buf, ft_memnew(param.width - tmp - (*i != '-' &&
-				(param.plus == 1 || param.space == 1)), ' '), 0, 1);
-			((param.space == 1 && *i != '-') || (param.space == 1
-						&& param.plus == 0)) ? ft_print_else(buf, ' ') : 0;
-			param.plus == 1 && *i != '-' ? ft_print_else(buf, '+') : 0;
+			ft_buf_add_s(buf, ft_memnew(p.width - tmp - (*i != '-' &&
+				(p.plus == 1 || p.space == 1)), ' '), 0, 1);
+			((p.space == 1 && *i != '-') || (p.space == 1
+						&& p.plus == 0)) ? ft_print_else(buf, ' ') : 0;
+			p.plus == 1 && *i != '-' ? ft_print_else(buf, '+') : 0;
 		}
 		else
 		{
-			//printf("%s\n", "3");
-			((param.space == 1 && *i != '-') || (param.space == 1 &&
-			param.plus == 0)) ? ft_print_else(buf, ' ') : 0;
-			param.plus == 1 && *i != '-' ? ft_print_else(buf, '+') : 0;
+			((p.space == 1 && *i != '-') || (p.space == 1 &&
+			p.plus == 0)) ? ft_print_else(buf, ' ') : 0;
+			p.plus == 1 && *i != '-' ? ft_print_else(buf, '+') : 0;
 			*i == '-' ? ft_print_else(buf, '-') : 0;
 			*i == '-' ? i++ : 0;
-			ft_buf_add_s(buf, ft_memnew(param.width - tmp -
-				(param.plus || *i == '-') - param.space, '0'), 0, 1);
+			ft_buf_add_s(buf, ft_memnew(p.width - tmp -
+				(p.plus || *i == '-') - p.space, '0'), 0, 1);
 		}
-		//printf("%s\n", i);
 		ft_buf_add_s(buf, i, 1, 1);
-		//printf("%s\n", "4.5");
-		param.hash == 1 && param.precision == 0 ? ft_print_else(buf, '.') : 0;
-		//printf("%s\n", "5");
+		p.hash == 1 && p.precision == 0 ? ft_print_else(buf, '.') : 0;
 	}
 	else
-		just_print(param, i, buf);
+		just_print(p, i, buf);
 }
 
-static void		ft_print_f(t_param param, char *i, t_buf *buf)
+static void		ft_print_f(t_param p, char *i, t_buf *buf)
 {
 	int	tmp;
 
 	tmp = ft_strlen(i);
-	if (param.precision == 0 && param.hash == 1)
+	if (p.precision == 0 && p.hash == 1)
 		tmp += 1;
-	if (param.minus == 0)
-		minus_neg(param, i, tmp, buf);
-	if (param.minus == 1)
-		minus_pos(param, i, tmp, buf);
+	if (p.minus == 0)
+		minus_neg(p, i, tmp, buf);
+	if (p.minus == 1)
+		minus_pos(p, i, tmp, buf);
 }
 
-void			ft_type_f(t_param param, va_list ap, t_buf *buf)
+void			ft_type_f(t_param p, va_list ap, t_buf *buf)
 {
-	param.precision == -1 ? param.precision = 6 : 0;
-	param.precision == -2 ? param.precision = 0 : 0;
-	if (param.length == 'L')
-		ft_print_f(param,
-				ft_float_f(va_arg(ap, long double), param.precision), buf);
+	p.precision == -1 ? p.precision = 6 : 0;
+	p.precision == -2 ? p.precision = 0 : 0;
+	if (p.length == 'L')
+		ft_print_f(p,
+				ft_float_f(va_arg(ap, long double), p.precision), buf);
 	else
-		ft_print_f(param,
-				ft_float_f(va_arg(ap, double), param.precision), buf);
+		ft_print_f(p,
+				ft_float_f(va_arg(ap, double), p.precision), buf);
 }

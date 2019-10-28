@@ -13,7 +13,7 @@
 NAME = libftprintf.a
 
 SRC = ft_printf.c ft_printf_init.c ft_add_new_param.c ft_atoi.c  \
-ft_free_buf.c ft_memset.c ft_percent_main.c ft_colour_main.c \
+ft_free_buf.c ft_memset.c ft_percent_main.c \
 ft_strnew.c ft_print_result.c param_fill/ft_get_flags.c \
 param_fill/ft_get_length.c param_fill/ft_get_prec.c \
 param_fill/ft_get_width.c param_fill/ft_param_fill.c \

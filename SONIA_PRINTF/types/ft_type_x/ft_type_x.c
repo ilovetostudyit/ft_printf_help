@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_type_x.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 01:47:37 by hcummera          #+#    #+#             */
+/*   Updated: 2019/10/28 01:47:38 by hcummera         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../ft_printf.h"
 
 static int	ft_type_x_l_ll_check(t_param param, va_list ap, t_buf *buf)
@@ -13,8 +25,8 @@ static int	ft_type_x_l_ll_check(t_param param, va_list ap, t_buf *buf)
 		ft_itoa_base_ll((unsigned long long)va_arg(ap, unsigned long long),
 			16), buf);
 	else
-		return(0);	
-	return(1);
+		return (0);
+	return (1);
 }
 
 static int	ft_type_x_h_hh_check(t_param param, va_list ap, t_buf *buf)
@@ -26,11 +38,11 @@ static int	ft_type_x_h_hh_check(t_param param, va_list ap, t_buf *buf)
 		ft_print_x(param,
 				ft_itoa_base_ll((unsigned char)va_arg(ap, int), 16), buf);
 	else
-		return(0);	
-	return(1);
+		return (0);
+	return (1);
 }
 
-static int ft_type_x_j_z_check(t_param param, va_list ap, t_buf *buf)
+static int	ft_type_x_j_z_check(t_param param, va_list ap, t_buf *buf)
 {
 	if (param.length == 'j')
 		ft_print_x(param,
@@ -39,13 +51,12 @@ static int ft_type_x_j_z_check(t_param param, va_list ap, t_buf *buf)
 		ft_print_x(param,
 				ft_itoa_base_ll((size_t)va_arg(ap, size_t), 16), buf);
 	else
-		return(0);	
-	return(1);
+		return (0);
+	return (1);
 }
 
 void		ft_type_x(t_param param, va_list ap, t_buf *buf)
 {
-	////printf("%s\n", "		Обрабатываем, флаг x");
 	if (!(ft_type_x_l_ll_check(param, ap, buf)))
 		if (!(ft_type_x_h_hh_check(param, ap, buf)))
 			ft_type_x_j_z_check(param, ap, buf);

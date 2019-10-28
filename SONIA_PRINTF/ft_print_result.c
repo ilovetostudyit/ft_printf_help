@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_result.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 04:35:25 by hcummera          #+#    #+#             */
+/*   Updated: 2019/10/28 04:35:27 by hcummera         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void				ft_buf_add_ns(t_buf *buf, char *str, size_t n, int flag)
 {
-	//printf("%s\n","тут я печатаю результат, но как-то иначе 0_о (NS)");
 	int		putch;
 	char	*beg;
 
@@ -30,9 +41,14 @@ void				ft_buf_add_ns(t_buf *buf, char *str, size_t n, int flag)
 	flag == 0 ? free(beg) : 0;
 }
 
+static void			print_null(t_buf *buf)
+{
+	ft_print_res(buf);
+	ft_null_str_buf(buf->buf);
+}
+
 void				ft_buf_add_s(t_buf *buf, char *str, int flag, int d)
 {
-	//printf("%s\n","тут я печатаю результат, но как-то иначе 0_о(S)");
 	int		putch;
 	size_t	len;
 	char	*beg;
@@ -42,10 +58,7 @@ void				ft_buf_add_s(t_buf *buf, char *str, int flag, int d)
 	if (d == 1)
 		*str == '-' ? str++ : 0;
 	if (buf->top + 1 + len >= BUF_SIZE)
-	{
-		ft_print_res(buf);
-		ft_null_str_buf(buf->buf);
-	}
+		print_null(buf);
 	buf->top + 1 + len >= BUF_SIZE ? buf->top = -1 : 0;
 	if (len >= BUF_SIZE)
 	{
@@ -60,22 +73,19 @@ void				ft_buf_add_s(t_buf *buf, char *str, int flag, int d)
 			buf->top += putch;
 			str++;
 		}
-	(flag == 0) ? free(beg) : 0;	
+	(flag == 0) ? free(beg) : 0;
 }
 
-void            ft_print_res(t_buf *buf)
+void				ft_print_res(t_buf *buf)
 {
-    //printf("%s\n","тут я печатаю результат");
-    write(1, buf->buf, buf->top + 1);
+	write(1, buf->buf, buf->top + 1);
 }
 
-void            ft_print_else(t_buf *buf, char str)
+void				ft_print_else(t_buf *buf, char str)
 {
-    ////printf("%s\n", "обрабатываю остальные символы");
 	if (buf->top + 1 >= BUF_SIZE)
 	{
-		ft_print_res(buf);
-        ft_null_str_buf(buf->buf);
+		print_null(buf);
 		buf->top = -1;
 	}
 	buf->buf[++buf->top] = str;

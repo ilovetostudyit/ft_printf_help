@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_float_analyse.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 01:43:50 by hcummera          #+#    #+#             */
+/*   Updated: 2019/10/28 01:43:53 by hcummera         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../ft_printf.h"
 
 static int		ft_round2(char **prec_c, int prec, int carry)
@@ -72,5 +84,5 @@ char			*ft_float_f(long double f, int precision)
 	s = ((*(t_uint128 *)&f) >> 79) & 1;
 	e = ((*(t_uint128 *)&f) >> 64) & 0x7FFF;
 	m = (*(t_uint128 *)&f) & 0xFFFFFFFFFFFFFFFF;
-	return (ft_ldouble(s, e, m, precision));	
+	return (ft_ldouble(s, e, m, precision));
 }

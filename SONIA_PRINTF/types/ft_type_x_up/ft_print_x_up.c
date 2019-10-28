@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_x_up.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 01:47:47 by hcummera          #+#    #+#             */
+/*   Updated: 2019/10/28 01:47:49 by hcummera         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../ft_printf.h"
 
-static void	minus_neg(t_param param, char *i, int tmp, t_buf *buf)
+static void		minus_neg(t_param param, char *i, int tmp, t_buf *buf)
 {
 	if ((param.width - (param.precision > tmp ? param.precision : tmp) -
 											param.hash) >= 0 && param.zero != 1)
@@ -17,7 +29,7 @@ static void	minus_neg(t_param param, char *i, int tmp, t_buf *buf)
 	ft_buf_add_s(buf, i, 0, 0);
 }
 
-static void	minus_pos(t_param param, char *i, int tmp, t_buf *buf)
+static void		minus_pos(t_param param, char *i, int tmp, t_buf *buf)
 {
 	if (param.hash != 0)
 		ft_buf_add_s(buf, "0X", 1, 0);
@@ -30,7 +42,7 @@ static void	minus_pos(t_param param, char *i, int tmp, t_buf *buf)
 		param.precision : tmp) - param.hash, ' '), 0, 0);
 }
 
-static void	str_up(char *i)
+static void		str_up(char *i)
 {
 	int	j;
 
@@ -43,7 +55,7 @@ static void	str_up(char *i)
 	}
 }
 
-void    ft_print_x_up(t_param param, char *str, t_buf *buf)
+void			ft_print_x_up(t_param param, char *str, t_buf *buf)
 {
 	int		tmp;
 

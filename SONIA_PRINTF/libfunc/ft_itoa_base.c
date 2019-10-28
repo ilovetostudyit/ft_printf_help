@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 01:09:31 by hcummera          #+#    #+#             */
+/*   Updated: 2019/10/28 01:14:35 by hcummera         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static void		turn_into_char(char *res, long long n,
+static void	turn_into_char(char *res, long long n,
 								int base, int num_d)
 {
 	char	*buf;
@@ -19,11 +30,11 @@ static void		turn_into_char(char *res, long long n,
 	}
 }
 
-static void		turn_into_char_ll(char *res, uintmax_t n,
-							   int base, int num_d)
+static void	turn_into_char_ll(char *res, uintmax_t n,
+		int base, int num_d)
 {
 	char	*buf;
-	
+
 	buf = "0123456789abcdef";
 	res[num_d--] = '\0';
 	while (n)
@@ -33,11 +44,11 @@ static void		turn_into_char_ll(char *res, uintmax_t n,
 	}
 }
 
-char			*ft_itoa_base_ll(uintmax_t n, int base)
+char		*ft_itoa_base_ll(uintmax_t n, int base)
 {
 	char	*res;
 	int		num_d;
-	
+
 	if (base < 2 || base > 16)
 		return (NULL);
 	if (n == 0)
@@ -57,8 +68,7 @@ char			*ft_itoa_base_ll(uintmax_t n, int base)
 	return (res);
 }
 
-
-char			*ft_itoa_base(long long n, int base)
+char		*ft_itoa_base(long long n, int base)
 {
 	char	*res;
 	int		num_d;

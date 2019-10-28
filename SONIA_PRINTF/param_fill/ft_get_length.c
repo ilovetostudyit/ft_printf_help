@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_length.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hcummera <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/28 01:16:15 by hcummera          #+#    #+#             */
+/*   Updated: 2019/10/28 01:16:16 by hcummera         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../ft_printf.h"
 
-void 	ft_get_length(t_param *param, char **str)
+void	ft_get_length(t_param *param, char **str)
 {
-	////printf("	Ищу длину\n");
-    if (**str == 'L' || **str == 'l' || **str == 'h' ||
-		    **str == 'j' || **str == 'z')
+	if (**str == 'L' || **str == 'l' || **str == 'h' ||
+		**str == 'j' || **str == 'z')
 	{
 		param->length += **str;
 		*str += 1;

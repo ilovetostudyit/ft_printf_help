@@ -10,23 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-//  ft_free_buf.c
-//  
-//
-//  Created by Hagraven Cummerata on 19/10/2019.
-//
-
 #include "ft_printf.h"
 
-void ft_free_buf(t_buf *buf)
+void	ft_free_buf(t_buf *buf)
 {
 	free(buf->buf);
 	buf = NULL;
-    ////printf("%s\n", "освобождаем буфер");
 }
 
-void ft_null_str_buf(char *str)
+void	ft_null_str_buf(char *str)
 {
 	while (*str)
 	{
